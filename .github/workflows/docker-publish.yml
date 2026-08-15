@@ -18,7 +18,7 @@ jobs:
       - name: Extract base image version from Dockerfile
         id: dockerfile_version
         run: |
-          TAG=$(awk -F'-' '/FROM/{print $(NF-1)}'
+          TAG=$(awk -F'-' '/FROM/{print $(NF-1)}' Dockerfile)
           echo "version=${TAG}" >> $GITHUB_OUTPUT
 
       - name: Set up Docker Buildx
