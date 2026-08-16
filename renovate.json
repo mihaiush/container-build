@@ -3,10 +3,14 @@
   "extends": [
     "config:recommended"
   ],
+  "dockerfile": {
+    "versioning": "regex:^testing-(?<major>\\d{4})(?<minor>\\d{2})(?<patch>\\d{2})-slim$"
+  },
   "packageRules": [
     {
-      "matchPackageNames": ["debian"],
+      "matchPackageNames": ["docker.io/debian", "debian"],
       "versioning": "regex:^testing-(?<major>\\d{4})(?<minor>\\d{2})(?<patch>\\d{2})-slim$"
     }
   ]
 }
+
