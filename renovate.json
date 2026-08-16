@@ -2,5 +2,11 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": ["debian"],
+      "versioning": "regex:^testing-(?<major>\\d{4})(?<minor>\\d{2})(?<patch>\\d{2})-slim$"
+    }
   ]
 }
