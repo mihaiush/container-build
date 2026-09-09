@@ -3,14 +3,16 @@
   "extends": [
     "config:recommended"
   ],
-  "dockerfile": {
-    "versioning": "regex:^testing-(?<major>\\d{4})(?<minor>\\d{2})(?<patch>\\d{2})-slim$"
-  },
-  "packageRules": [
+  "customManagers": [
     {
-      "matchPackageNames": ["docker.io/debian", "debian"],
-      "versioning": "regex:^testing-(?<major>\\d{4})(?<minor>\\d{2})(?<patch>\\d{2})-slim$"
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/^Dockerfile$/"
+      ],
+      "matchStrings": [
+        "#\\s*renovate:\\s*datasource=(?<datasource>\\S+)\\s+depName=(?<depName>\\S+)(\\s+registryUrl=(?<registryUrl>\\S+))?\\nENV\\s+[A-Z_]+_VERSION=\"(?<currentValue>[^\"]+)\""
+      ],
+      "versioningTemplate": "loose"
     }
   ]
 }
-
