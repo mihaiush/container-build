@@ -56,7 +56,7 @@ jobs:
             echo "Empty TAG"
             exit 1
           fi
-          if [[ "$TAG" =~ ^[0-9]+\.[0-9]$ ]]; then
+          if [[ "$TAG" =~ ^[0-9]+\.[0-9]+$ ]]; then
             # semver
             TAG="${TAG}.${{ github.run_number }}"
           else
