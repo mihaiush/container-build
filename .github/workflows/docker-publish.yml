@@ -38,7 +38,7 @@ jobs:
           fi
           if [ -z "$NAME" ] ; then
             NAME=$(echo "${{ github.event.repository.name }}" | awk -F'container-' '{print $2}')
-          else
+          fi
           echo "name=${NAME}" >> "$GITHUB_OUTPUT"
           if [ -z "$TAG" ] ; then
             TAG=$(echo $NAME | tr '[a-z]' '[A-Z]')
