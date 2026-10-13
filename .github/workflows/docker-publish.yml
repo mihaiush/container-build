@@ -10,6 +10,7 @@ permissions:
 
 jobs:
   build-and-push:
+    needs: hadolint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
