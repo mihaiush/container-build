@@ -1,4 +1,4 @@
-# renovate: datasource=docker depName=library/debian
+# renovate: datasource=docker depName=library/debian versioning=regex:^(?<compatibility>[a-z]+)-(?<major>[0-9]+).+
 ARG IMAGE_VERSION="testing-20261020-slim"
 FROM docker.io/library/debian:${IMAGE_VERSION}
 
