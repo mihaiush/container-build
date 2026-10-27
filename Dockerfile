@@ -1,6 +1,6 @@
-# renovate: datasource=docker depName=library/debian
-ARG IMAGE_VERSION="testing-20261020-slim"
-FROM docker.io/library/debian:${IMAGE_VERSION}
+## renovate: datasource=docker depName=library/debian
+#ARG IMAGE_VERSION="testing-20261020-slim"
+FROM docker.io/library/debian:testing-20261020-slim
 
 RUN \
     echo 'APT::Install-Recommends "false";' >>/etc/apt/apt.conf &&\
