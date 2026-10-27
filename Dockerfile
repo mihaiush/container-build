@@ -1,5 +1,5 @@
 # renovate: datasource=docker depName=library/debian
-ARG IMAGE_VERSION="unstable-20261020-slim"
+ARG IMAGE_VERSION="testing-20261020-slim"
 FROM docker.io/library/debian:${IMAGE_VERSION}
 
 RUN \
